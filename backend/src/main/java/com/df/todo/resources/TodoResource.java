@@ -31,4 +31,10 @@ public class TodoResource {
 		return ResponseEntity.ok().body(list);
 	}
 	
+	@GetMapping(value = "/close")
+	public ResponseEntity<List<Todo>> listclose() {
+		List<Todo> list = service.findAllclose();
+		return ResponseEntity.ok().body(list);
+	}
+	
 }

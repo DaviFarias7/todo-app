@@ -24,4 +24,9 @@ public class TodoService {
 		List<Todo> list = repository.findAllOpen();
 		return list;
 	}
+
+	public List<Todo> findAllclose() {
+		List<Todo> list = repository.findAllClose();
+		return list;
+	}
 }
