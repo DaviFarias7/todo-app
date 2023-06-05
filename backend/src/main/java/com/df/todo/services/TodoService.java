@@ -8,16 +8,16 @@ import org.springframework.stereotype.Service;
 
 import com.df.todo.domains.Todo;
 import com.df.todo.repositories.TodoRepository;
+import com.df.todo.services.exceptions.ObjectNotFoundException;
 
 @Service
 public class TodoService {
 
 	@Autowired
 	private TodoRepository repository;
-	
 	public Todo findById(Integer id) {
 		Optional<Todo> obj = repository.findById(id);
-		return obj.orElse(null);
+		return obj.orElseThrow(() -> new ObjectNotFoundException(("Objeto não encontrado" + id + Todo.class.getName())));
 	}
 
 	public List<Todo> findAllOpen() {
@@ -41,6 +41,6 @@ public class TodoService {
 	}
 
 	public void delete(Integer id) {
-	 repository.deleteById(id);
+		repository.deleteById(id);
 	}
 }
