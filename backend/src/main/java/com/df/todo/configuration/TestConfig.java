@@ -1,5 +1,7 @@
 package com.df.todo.configuration;
 
+import java.text.ParseException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -15,7 +17,7 @@ public class TestConfig {
 	private DBService debService;
 	
 	@Bean
-	public boolean instacia() {
+	public boolean instacia() throws ParseException {
 		this.debService.instanciaBaseDeDados();
 		return true;
 	}
