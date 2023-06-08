@@ -1,11 +1,23 @@
-.elevation-button {
+/* .elevation-button {
     padding: 10px;
     -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
 }
-
+ */
 .container {
     width: 85%;
     margin: auto;
+}
+
+.badge {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.badge button {
+    margin: auto;
+    width: 100%;
 }
 
 .content {

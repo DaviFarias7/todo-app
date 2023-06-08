@@ -8,32 +8,43 @@ import { TodoService } from "src/app/services/todo.service";
   styleUrls: ["./read-all.component.css"],
 })
 export class ReadAllComponent implements OnInit {
-  /* list: Todo[] = [
-    {
-      titulo: "Teste",
-      dataParaFinalizar: new Date(),
-      finalizado: false,
-    },
-    {
-      titulo: "Teste 2",
-      dataParaFinalizar: new Date(),
-      finalizado: false,
-    },
-  ]; */
+  closed = 0;
+  list: Todo[] = [];
+  listFinished: Todo[] = [];
 
   constructor(private service: TodoService) {}
 
   ngOnInit(): void {
-    throw new Error("Method not implemented.");
-  }
-
-  gOnInit(): void {
     this.findAll();
   }
 
   findAll(): void {
-    this.service.findAll().subscribe((resposta) = > {
-      this.list = resposta;
+    this.service.findAll().subscribe((resposta) => {
+      resposta.forEach(todo => {
+        if(todo.finalizado) {
+          this.listFinished.push(todo);
+        } else{
+          this.list.push(todo)
+        }
+      })
+      this.closed = this.listFinished.length;
+    });
+  }
+
+  countClosed(): void {
+    for (let todo of this.list) {
+      if (todo.finalizado) {
+        this.closed++;
+      }
+    }
+  }
+
+  delete(id: any):void{
+    this.service.delete(id).subscribe((resposta) => {
+      if(resposta === null){
+        this.service.message('Task deletada com sucesso');
+        this.list = this.list.filter(todo => todo.id !== id);
+      } 
     })
   }
 }
