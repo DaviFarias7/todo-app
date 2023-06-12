@@ -22,9 +22,11 @@ export class TodoService {
     const url = `${this.baseUrl}/${id}`
     return this.http.delete<void>(url);
   }
+
+  
   
   message(msg: string): void {
-    this.snack.open(`${msg}`, 'OK', {
+    this.snack.open(`${msg},`, 'OK', {
       horizontalPosition: 'end',
       verticalPosition: 'top',
       duration: 4000
