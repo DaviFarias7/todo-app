@@ -3,6 +3,12 @@
     margin: auto;
 }
 
+h1{
+    text-align: center;
+    font-weight: 600;
+    margin-top: 1rem;
+    color: rgb(77, 76, 76);
+}
 .content {
     width: 100%;
 }
