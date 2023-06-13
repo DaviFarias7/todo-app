@@ -22,6 +22,7 @@ import { MatDatepickerModule } from "@angular/material/datepicker";
 import { MatInputModule } from "@angular/material/input";
 import { MatNativeDateModule } from "@angular/material/core";
 import { CalendarModule } from "primeng/calendar";
+import { UpdateComponent } from './components/update/update.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { CalendarModule } from "primeng/calendar";
     ReadAllComponent,
     FinalizadosComponent,
     CreateComponent,
+    UpdateComponent,
         
   ],
   imports: [
