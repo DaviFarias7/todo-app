@@ -1,19 +1,19 @@
 <form action="">
 
     <h1>CRIANDO NOVO TO-DO</h1>
-    <input id="finalizar" type="date" class="data-finalizar" ng-model="acao">
+    <input [(ngModel)]="todo.dataParaFinalizar" name="todo.dataParaFinalizar" id="finalizar" type="date" class="data-finalizar" ng-model="acao">
 
     <div class="forms">
         <mat-form-field class="form">
-            <input maxlength="50" matInput placeholder="Título">
+            <input [(ngModel)]="todo.titulo" name="todo.titulo" maxlength="50" matInput placeholder="Título">
         </mat-form-field>
     
         <mat-form-field class="form">
-            <input maxlength="150" matInput placeholder="Descrção">
+            <input [(ngModel)]="todo.descricao" name="todo.descricao" maxlength="150" matInput placeholder="Descrção">
         </mat-form-field>
     </div>
     <div class="buttons">
-        <button mat-stroked-button color="primary">Criar</button>
+        <button (click)="create()" mat-stroked-button color="primary">Criar</button>
         <button (click)="cancel()" mat-stroked-button color="warn">Cancelar</button>
     </div>
 

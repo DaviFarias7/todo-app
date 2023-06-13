@@ -27,6 +27,10 @@ export class TodoService {
     const url = `${this.baseUrl}/${id}`
     return this.http.delete<void>(url);
   }
+
+  create(todo: Todo): Observable<Todo>{
+    return this.http.post<Todo>(this.baseUrl, todo);
+  }
   
   message(msg: string): void {
     this.snack.open(`${msg},`, 'OK', {
