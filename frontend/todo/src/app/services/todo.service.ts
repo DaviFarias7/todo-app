@@ -37,7 +37,7 @@ export class TodoService {
   }
 
   message(msg: string): void {
-    this.snack.open(`${msg},`, "OK", {
+    this.snack.open(`${msg}`, "OK", {
       horizontalPosition: "end",
       verticalPosition: "top",
       duration: 4000,

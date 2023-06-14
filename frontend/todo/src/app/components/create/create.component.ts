@@ -28,7 +28,7 @@ export class CreateComponent {
         this.router.navigate([""]);
       },
       (err) => {
-        this.service.message("Flaha ao criar To-do");
+        this.service.message("Falha ao criar To-do");
         this.router.navigate([""]);
       }
     );
@@ -39,9 +39,8 @@ export class CreateComponent {
   }
 
   formataData(): void {
-    let data = new Date(this.todo.dataParaFinalizar);
-    this.todo.dataParaFinalizar = `${data.getDate()}/${
-      data.getMonth() + 1
-    }/${data.getFullYear()}}`;
+    let data = this.todo.dataParaFinalizar.split('-')
+    this.todo.dataParaFinalizar = `${data[2]}/${data[1]}/${data[0]}}`;
+    console.log(data[2]);
   }
 }
