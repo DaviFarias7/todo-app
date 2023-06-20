@@ -1,6 +1,7 @@
 package com.df.todo.services;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +29,16 @@ public class TodoService {
 	public List<Todo> findAllclose() {
 		List<Todo> list = repository.findAllClose();
 		return list;
+	}
+	
+	public void deleteClosedById(Integer id) {
+		List<Todo> list = repository.findAllClose();
+	    Todo itemToDelete = list.stream()
+	        .filter(todo -> todo.getId().equals(id))
+	        .findFirst()
+	        .orElseThrow(() -> new NoSuchElementException("Item não encontrado"));
+
+	    repository.delete(itemToDelete);
 	}
 
 	public List<Todo> findAll() {

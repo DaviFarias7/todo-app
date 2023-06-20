@@ -64,6 +64,12 @@ public class TodoResource {
 		return ResponseEntity.noContent().build();
 	}
 	
+	@DeleteMapping(value = "/close/{id}")
+	public ResponseEntity<Void> deleteClosedById(@PathVariable Integer id){
+		service.deleteClosedById(id);
+		return ResponseEntity.noContent().build();
+	}
+	
 	@PutMapping(value = "/{id}")
 	public ResponseEntity<Todo> update(@PathVariable Integer id, @RequestBody Todo obj) {
 		Todo newObj = service.update(id, obj);

@@ -16,5 +16,4 @@ public interface TodoRepository extends JpaRepository<Todo, Integer> {
 
 	@Query("SELECT obj FROM Todo obj WHERE obj.finalizado = true ORDER BY obj.dataParaFinalizar")
 	List<Todo> findAllClose();
-	
 }
