@@ -21,6 +21,16 @@ export class CreateComponent {
   ngOnInit(): void {}
 
   create(): void {
+    if (this.todo.titulo.trim() === '' || this.todo.descricao.trim() === '') {
+      this.service.message("Título e descrição são obrigatórios");
+      return;
+    }
+
+   /*  if (this.todo.dataParaFinalizar instanceof Date && isNaN(this.todo.dataParaFinalizar.getTime())) {
+      this.service.message("Data para finalizar inválida");
+      return;
+    }   */
+    
     this.formataData();
     this.service.create(this.todo).subscribe(
       () => {
@@ -41,6 +51,6 @@ export class CreateComponent {
   formataData(): void {
     let data = this.todo.dataParaFinalizar.split('-')
     this.todo.dataParaFinalizar = `${data[2]}/${data[1]}/${data[0]}}`;
-    console.log(data[2]);
+    console.log(data);
   }
 }

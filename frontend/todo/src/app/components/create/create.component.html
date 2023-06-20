@@ -5,11 +5,12 @@
 
     <div class="forms">
         <mat-form-field class="form">
-            <input [(ngModel)]="todo.titulo" name="todo.titulo" maxlength="50" matInput placeholder="Título">
+            <input [(ngModel)]="todo.titulo" name="todo.titulo" maxlength="20" matInput placeholder="Título">
         </mat-form-field>
     
         <mat-form-field class="form">
-            <input [(ngModel)]="todo.descricao" name="todo.descricao" maxlength="150" matInput placeholder="Descrção">
+            <textarea matInput name="todo.descricao" cols="35" rows="8" maxlength="150" placeholder="Descrição" 
+            [(ngModel)]="todo.descricao"></textarea>
         </mat-form-field>
     </div>
     <div class="buttons">

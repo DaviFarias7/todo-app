@@ -34,9 +34,15 @@ mat-card {
     padding: .2rem;
 }
 
-p {
+.p-data-finalizar {
     text-align: end;
     font-weight: 600;
+    color: rgb(114, 111, 111);
+    margin-bottom: 0;
+}
+
+.p-content {
+    font-weight: 500;
     color: rgb(114, 111, 111);
     margin-bottom: 0;
 }
