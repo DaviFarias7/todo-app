@@ -1,4 +1,5 @@
 .container {
+    min-height: 80vh;
     width: 85%;
     margin: auto;
 }

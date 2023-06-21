@@ -6,6 +6,7 @@ h1 {
   }
   
   .data-finalizar {
+    margin-bottom: 1rem;
     text-align: start;
   }
   
@@ -14,6 +15,7 @@ h1 {
   }
   
   form {
+    min-height: 80vh;
     margin: 2rem auto 0 auto;
     text-align: center;
     width: 70%;

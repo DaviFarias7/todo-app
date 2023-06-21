@@ -11,9 +11,11 @@ h1 {
 
 .forms {
     margin-top: 2rem;
+    
 }
 
 form {
+    min-height: 80vh;
     width: 70%;
     margin: 2rem auto 0 auto;
     text-align: center;
