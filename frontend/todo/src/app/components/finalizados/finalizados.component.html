@@ -12,6 +12,12 @@
             <mat-card-content>
                 <p class="p-content" style="word-wrap: break-word; text-align: start;">{{item.descricao}}</p>
             </mat-card-content>
+
+            <div class="actions">
+                <button (click)="delete(item.id)" mat-mini-fab color="warn">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </div>
         </mat-card>
     </div>
 </div>

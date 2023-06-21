@@ -27,6 +27,15 @@ export class FinalizadosComponent {
       
     });
   }
+
+  delete(id: any): void {
+    this.service.delete(id).subscribe((resposta) => {
+      if (resposta === null) {
+        this.service.message("Task deletada com sucesso");
+        this.listFinished = this.listFinished.filter((todo) => todo.id !== id);
+      }
+    });
+  }
  
   voltar():void {
     this.router.navigate([''])

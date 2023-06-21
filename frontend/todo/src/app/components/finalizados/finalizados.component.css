@@ -16,6 +16,7 @@ h1{
 .badge button {
     margin-top: 1rem;
     width: 100%;
+    text-align: end;
 }
 
 p {
@@ -29,3 +30,21 @@ mat-card {
     margin-top: .8rem;
     padding: .2rem;
 }
+
+.elevation-card button {
+    margin: .5rem;
+}
+
+.righ-align {
+    text-align: right;
+}
+
+.actions {
+    text-align: end;
+}
+
+.actions button {
+    margin: .5rem;
+}
+
+
