@@ -1,3 +1,10 @@
+# Backend
+
+# Swagger
+![swagger](https://github.com/DaviFarias7/todo-app/assets/86566715/826643ce-b009-410d-9de6-ea960913c395)
+
+# Frontend
+
 # todo-app Home
 
 ![todo_home](https://github.com/DaviFarias7/todo-app/assets/86566715/1f9d00e9-9e06-478d-9806-42883376283b)
